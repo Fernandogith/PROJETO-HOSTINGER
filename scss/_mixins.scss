@@ -1,0 +1,30 @@
+@mixin responsive($ScreenWidth){
+    @media(max-width: $ScreenWidth) {
+        @content;
+    }
+}
+
+@mixin flex ($direction, $align, $justify) {
+    display: flex;
+    flex-direction: $direction;
+    align-items: $align;
+    justify-content: $justify;
+}
+
+@mixin style-btn($height, $bg, $colorText) {
+    display: inline-block;
+    height: $height;
+    line-height: $height;  // Utilizado para centralizar o texto no botão de forma simples, line-height define o tamanho da linha do texto, que deve ser aplicada igual ao tamanho do botão
+    background-color: $bg;
+    color: $colorText;
+    border-radius: 0.6rem;
+    padding: 0px 5rem;
+    font-weight: bold;
+    font-size: 1.6rem;
+    cursor: pointer;
+    transition: all 1s;
+    &:hover {
+        background-color: $colorText;
+        color: $bg;
+    }
+}
